@@ -1,9 +1,9 @@
-<h1>Backbone App Here</h1>
+<h1>Meteor Airlines</h1>
 
 <div id="main"></div>
 
-<script id="appViewTemplate" type="html/template">
-    <div>
+<script id="airlineAppViewTemplate" type="html/template">
+    <div id="searchForm">
         Form goes here
     </div>
 
@@ -12,8 +12,14 @@
     </ul>
 </script>
 
-<script id="searchForm" type="html/template">
-    <input type="text" id="origin"/>
-    <input type="text" id="destination"/>
-    <button id="submit"></button>
+<script id="searchFormTemplate" type="html/template">
+    <form>
+        <div>
+            <input type="text" id="origin" placeholder="origin" required />
+            <input type="text" id="destination" placeholder="destination" required />
+        </div>
+
+
+        <button id="submit">Search</button>
+    </form>
 </script>

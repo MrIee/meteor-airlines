@@ -7,7 +7,10 @@ app.AppRouter = Backbone.Router.extend({
     },
 
     index: function() {
-        var appView = new app.AppView();
-        appView.render();
+        var airlineAppView = new app.AirlineAppView();
+        airlineAppView.render();
+
+        var searchFormView = new app.SearchFormView();
+        searchFormView.render();
     }
 });

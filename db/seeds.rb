@@ -2,9 +2,9 @@ Flight.destroy_all
 User.destroy_all
 Airplane.destroy_all
 
-u1 = User.create :id => 7, :name => 'Alex', :email => 'alex@alex.com', :admin => false
-u2 = User.create :id => 8, :name => 'Toby', :email => 'toby@toby.com', :admin => true
-u3 = User.create :id => 9, :name => 'Rhi', :email => 'rhi@rhi.com', :admin => false
+u1 = User.create :id => 7, :name => 'Alex', :email => 'alex@alex.com', :admin => false, :password => "chicken"
+u2 = User.create :id => 8, :name => 'Toby', :email => 'toby@toby.com', :admin => true, :password => "chicken"
+u3 = User.create :id => 9, :name => 'Rhi', :email => 'rhi@rhi.com', :admin => false, :password => "chicken"
 
 a1 = Airplane.create :id => 4, :name => '007', :seat_row => 5, :seat_column => 5
 a2 = Airplane.create :id => 5, :name => '420', :seat_row => 3, :seat_column => 6

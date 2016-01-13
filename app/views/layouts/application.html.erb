@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<%= yield %>
+    <nav>
+        <% if @current_user.present? %>
+            <%= link_to("Logout", "/login", :rel => "nofollow", "data-method" => "delete") %>
+        <% end %>
+    </nav>
+
+    <div>
+        <%= yield %>
+    </div>
 
 </body>
 </html>
