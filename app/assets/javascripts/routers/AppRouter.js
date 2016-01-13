@@ -3,14 +3,17 @@ var app = app || {};
 app.AppRouter = Backbone.Router.extend({
     routes: {
         "": "index",
-        "/flight:id": "getFlight"
+        "flight/:flight_num": "getFlight"
     },
 
     index: function() {
         var airlineAppView = new app.AirlineAppView();
         airlineAppView.render();
+    },
 
-        var searchFormView = new app.SearchFormView();
-        searchFormView.render();
+    getFlight: function(flight_num) {
+        var flight = app.flights.findWhere({ flight_number: parseInt(flight_num) });
+        var flightView = new app.FlightView({ model: flight });
+        flightView.render();
     }
 });

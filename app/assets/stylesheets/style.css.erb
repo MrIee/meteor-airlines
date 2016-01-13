@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: orange;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #FF7300;
+}
+
+body {
+    background: orange url(<%= asset_path("burning-horizon.jpg") %>) no-repeat;
+    color: white;
+}
+
+input {
+    padding: 0.25em;
+    font-size: 1.5em;
+    margin-bottom: 0.25em;
+}
+
+table.searchResults {
+    margin: 0 auto;
+    margin-top: 1em;
+    border: 1px solid white;
+}
+
+.searchResults tr:nth-child(odd) {
+    background-color: rgb(220, 100, 220);
+}
+
+.bg {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(<%= asset_path("ffvii-bg.png") %>);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.65;
+    position: fixed;
+    z-index: -1;
+}
+
+nav {
+    text-align: center;
+}
+
+.container {
+    max-with: 600px;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1em;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background-color: rgba(204, 51, 255, 0.75);
+}

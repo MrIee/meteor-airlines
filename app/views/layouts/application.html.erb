@@ -8,15 +8,23 @@
 </head>
 <body>
 
+  <div class="bg">
+  </div>
     <nav>
+        <%= link_to("Home", "/search") %>
+        <% if @current_user && @current_user.admin? %>
+          <%= link_to('Show users', users_path) %>
+        <% end %>
         <% if @current_user.present? %>
-            <%= link_to("Logout", "/login", :rel => "nofollow", "data-method" => "delete") %>
+          <%= link_to('Show flights', flights_path) %>
+          <%= link_to("Logout", "/login", :rel => "nofollow", "data-method" => "delete") %>
         <% end %>
     </nav>
 
-    <div>
+    <div class="container">
         <%= yield %>
     </div>
+
 
 </body>
 </html>

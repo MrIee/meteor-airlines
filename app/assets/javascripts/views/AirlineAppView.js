@@ -6,5 +6,8 @@ app.AirlineAppView = Backbone.View.extend({
     render: function() {
         var airlineAppViewTemplate = $("#airlineAppViewTemplate").html();
         this.$el.html(airlineAppViewTemplate);
+
+        var searchFormView = new app.SearchFormView();
+        searchFormView.render();
     }
 });

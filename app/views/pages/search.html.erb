@@ -7,19 +7,26 @@
         Form goes here
     </div>
 
-    <ul>
-        Search results go here
-    </ul>
+    <table id="searchResults">
+    </table>
 </script>
 
 <script id="searchFormTemplate" type="html/template">
     <form>
         <div>
-            <input type="text" id="origin" placeholder="origin" required />
-            <input type="text" id="destination" placeholder="destination" required />
+            <input type="text" maxlength="3" size="10" id="origin" placeholder="origin" required />
+            <input type="text" maxlength="3" size="10" id="destination" placeholder="destination" required />
         </div>
 
 
         <button id="submit">Search</button>
     </form>
+</script>
+
+<script id="flightTemplate" type="html/template">
+    <td><%%= airplane_id %></td>
+    <td><a><%%= flight_number %></a></td>
+    <td><%%= origin %></td>
+    <td><%%= destination %></td>
+    <td><%%= date %></td>
 </script>
