@@ -36,7 +36,6 @@ app.SearchFormView = Backbone.View.extend({
             // $("#searchResults").append(flightHTML);
         });
 
-        //console.log(resultSet);
     },
 
     render: function() {

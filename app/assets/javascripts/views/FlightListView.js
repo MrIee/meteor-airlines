@@ -13,6 +13,10 @@ app.FlightListView = Backbone.View.extend({
 
     render: function() {
         var flightListViewTemplater = _.template( $("#flightTemplate").html() );
+        var dateFormat = moment(this.model.get("date"));
+        dateFormat = dateFormat.format("L");
+        this.model.set({ date: dateFormat });
+
         this.$el.html( flightListViewTemplater( this.model.toJSON() ) );
         this.$el.appendTo("#searchResults");
     }
