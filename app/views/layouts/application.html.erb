@@ -11,6 +11,9 @@
   <div class="bg">
   </div>
     <nav>
+      <% if @current_user.present? %>
+       <h2>Logged in as <%= @current_user.try(:name) %>
+       <% end %> </h2>
         <%= link_to("Home", "/search") %>
         <% if @current_user && @current_user.admin? %>
           <%= link_to('Show users', users_path) %>
