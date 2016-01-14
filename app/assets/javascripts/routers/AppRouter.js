@@ -13,7 +13,7 @@ app.AppRouter = Backbone.Router.extend({
 
     getFlight: function(flight_num) {
         var flight = app.flights.findWhere({ flight_number: parseInt(flight_num) });
-        var flightView = new app.FlightView({ model: flight });
-        flightView.render();
+        var reservationView = new app.ReservationView({ model: flight });
+        reservationView.render();
     }
 });
