@@ -5,7 +5,7 @@ Reservation = Backbone.Model.extend({
     defaults: {},
 
     initialize: function() {
-        this..on("add", function(reservation) {
+        this.on("add", function(reservation) {
             var reservationView = new app.ReservationView({ model: reservation });
 
             reservationView.render();
