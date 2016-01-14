@@ -10,7 +10,7 @@ a1 = Airplane.create :name => '007', :rows => 10, :columns => 6
 a2 = Airplane.create :name => '420', :rows => 10, :columns => 6
 a3 = Airplane.create :name => '900', :rows => 10, :columns => 6
 
-f1 = Flight.create :flight_number => 10, :origin => 'SYD', :destination => 'MLB', :date => '2016-12-01 18:30', :airplane_id => 1
-f2 = Flight.create :flight_number => 119, :origin => 'SYD', :destination => 'MLB', :date => '2016-10-01 18:30', :airplane_id => 2
-f3 = Flight.create :flight_number => 212, :origin => 'SYD', :destination => 'MLB', :date => '2016-11-01 18:30', :airplane_id => 3
+f1 = Flight.create :flight_number => 10, :origin => 'SYD', :destination => 'MLB', :date => '2016-12-01 18:30', :airplane_id => a1.id
+f2 = Flight.create :flight_number => 119, :origin => 'SYD', :destination => 'MLB', :date => '2016-10-01 18:30', :airplane_id => a2.id
+f3 = Flight.create :flight_number => 212, :origin => 'SYD', :destination => 'MLB', :date => '2016-11-01 18:30', :airplane_id => a3.id
 

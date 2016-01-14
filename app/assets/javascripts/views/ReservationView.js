@@ -18,20 +18,31 @@ app.ReservationView = Backbone.View.extend({
     },
 
     render: function() {
-        var airplane = app.airplanes.findWhere({ airplane_id: this.model.get("airplane_id") });
+        var selectedFlightTemplate = _.template( $("#flightTemplate").html() );
+        var dateFormat = moment(this.model.get("date"));
+        dateFormat = dateFormat.format("L");
+        this.model.set({ date: dateFormat });
 
+        var seatingHTML = "<table id='flightInfo'><tr>";
+        seatingHTML += selectedFlightTemplate( this.model.toJSON() );
+        seatingHTML += "</tr></table>";
+
+        var airplane = app.airplanes.findWhere({ id: this.model.get("airplane_id") });
         var row = airplane.get("rows");
         var column = airplane.get("columns");
-        var seatingHTML = "<table>"
-        for (var i = 0; i < row; i++) {
+
+        seatingHTML += "<table id='reservationTable'>"
+
+        for (var i = 1; i < row; i++) {
             seatingHTML += "<tr>"
             for (var j = 0; j < column; j++) {
                 seatingHTML += "<td>"
-                seatingHTML += "Alex"
+                seatingHTML += "seat " + i + String.fromCharCode(65 + j)
                 seatingHTML += "</td>"
             }
             seatingHTML += "</tr>"
         }
+         console.log(seatingHTML);
         this.$el.html(seatingHTML);
     }
 });
